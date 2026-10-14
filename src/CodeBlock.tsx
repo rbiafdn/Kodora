@@ -116,6 +116,11 @@ LANGS.ts = {
   keywords: new Set([...LANGS.js.keywords, 'interface', 'type', 'enum', 'implements', 'abstract', 'readonly', 'keyof', 'declare', 'namespace', 'is', 'satisfies', 'private', 'public', 'protected', 'override']),
   comment: LANGS.js.comment,
 }
+LANGS.vue = {
+  types: new Set([...LANGS.ts.types, 'ref', 'reactive', 'computed', 'watch', 'watchEffect', 'onMounted', 'onUnmounted', 'onUpdated', 'defineProps', 'defineEmits', 'defineModel', 'withDefaults', 'defineStore', 'storeToRefs', 'useRoute', 'useRouter', 'createApp', 'createRouter', 'createPinia', 'nextTick', 'toRefs', 'provide', 'inject', 'useTemplateRef', 'defineAsyncComponent', 'RouterView', 'RouterLink', 'Transition', 'KeepAlive']),
+  keywords: new Set([...LANGS.ts.keywords, 'v-if', 'v-else', 'v-for', 'v-model', 'v-show', 'v-bind', 'v-on', 'template', 'script', 'style', 'setup', 'scoped']),
+  comment: LANGS.js.comment,
+}
 LANGS.react = {
   types: new Set([...LANGS.ts.types, 'React', 'useState', 'useEffect', 'useRef', 'useContext', 'useReducer', 'useMemo', 'useCallback', 'useId', 'useLayoutEffect', 'createContext', 'createRoot', 'StrictMode', 'memo', 'lazy', 'Suspense', 'Link', 'NavLink', 'Route', 'Routes', 'Outlet', 'Navigate', 'BrowserRouter', 'useParams', 'useNavigate', 'useSearchParams', 'useQuery', 'ErrorBoundary']),
   keywords: LANGS.ts.keywords,

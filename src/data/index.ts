@@ -12,6 +12,7 @@ import { css, cssGiris } from './css'
 import { js, jsGiris } from './js'
 import { ts, tsGiris } from './ts'
 import { react, reactGiris } from './react'
+import { vue, vueGiris } from './vue'
 
 const SQL_GROUP = { id: 'sql', title: 'SQL' }
 const WEB_GROUP = { id: 'web', title: 'Web' }
@@ -41,4 +42,5 @@ export const languages: Language[] = [
   { id: 'js', title: 'JavaScript', comment: '//', group: WEB_GROUP, giris: jsGiris, topics: js },
   { id: 'ts', title: 'TypeScript', comment: '//', group: WEB_GROUP, giris: tsGiris, topics: ts },
   { id: 'react', title: 'React', comment: '//', group: WEB_GROUP, giris: reactGiris, topics: react },
+  { id: 'vue', title: 'Vue', comment: '//', group: WEB_GROUP, giris: vueGiris, topics: vue },
 ]
