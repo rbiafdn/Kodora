@@ -16,6 +16,8 @@ import { vue, vueGiris } from './vue'
 import { angular, angularGiris } from './angular'
 import { node, nodeGiris } from './node'
 import { nextjs, nextjsGiris } from './nextjs'
+import { svelte, svelteGiris } from './svelte'
+import { tailwind, tailwindGiris } from './tailwind'
 
 const SQL_GROUP = { id: 'sql', title: 'SQL' }
 const WEB_GROUP = { id: 'web', title: 'Web' }
@@ -49,4 +51,6 @@ export const languages: Language[] = [
   { id: 'angular', title: 'Angular', comment: '//', group: WEB_GROUP, giris: angularGiris, topics: angular },
   { id: 'node', title: 'Node.js + Express', comment: '//', group: WEB_GROUP, giris: nodeGiris, topics: node },
   { id: 'nextjs', title: 'Next.js', comment: '//', hl: 'react', group: WEB_GROUP, giris: nextjsGiris, topics: nextjs },
+  { id: 'svelte', title: 'Svelte', comment: '//', group: WEB_GROUP, giris: svelteGiris, topics: svelte },
+  { id: 'tailwind', title: 'Tailwind', comment: '<!--', commentEnd: '-->', hl: 'html', group: WEB_GROUP, giris: tailwindGiris, topics: tailwind },
 ]

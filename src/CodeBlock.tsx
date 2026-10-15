@@ -131,6 +131,11 @@ LANGS.node = {
   keywords: LANGS.ts.keywords,
   comment: LANGS.js.comment,
 }
+LANGS.svelte = {
+  types: new Set([...LANGS.ts.types, '$state', '$derived', '$effect', '$props', '$bindable', '$inspect', 'goto', 'page', 'fail', 'redirect', 'error', 'json', 'enhance', 'invalidateAll', 'fade', 'fly']),
+  keywords: new Set([...LANGS.ts.keywords, 'each', 'snippet', 'render', 'await', 'then', 'bind', 'transition', 'onclick', 'actions', 'load']),
+  comment: LANGS.js.comment,
+}
 LANGS.react = {
   types: new Set([...LANGS.ts.types, 'React', 'useState', 'useEffect', 'useRef', 'useContext', 'useReducer', 'useMemo', 'useCallback', 'useId', 'useLayoutEffect', 'createContext', 'createRoot', 'StrictMode', 'memo', 'lazy', 'Suspense', 'Link', 'NavLink', 'Route', 'Routes', 'Outlet', 'Navigate', 'BrowserRouter', 'useParams', 'useNavigate', 'useSearchParams', 'useQuery', 'ErrorBoundary']),
   keywords: LANGS.ts.keywords,
