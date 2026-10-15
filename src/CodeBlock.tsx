@@ -121,6 +121,11 @@ LANGS.vue = {
   keywords: new Set([...LANGS.ts.keywords, 'v-if', 'v-else', 'v-for', 'v-model', 'v-show', 'v-bind', 'v-on', 'template', 'script', 'style', 'setup', 'scoped']),
   comment: LANGS.js.comment,
 }
+LANGS.angular = {
+  types: new Set([...LANGS.ts.types, 'Component', 'Injectable', 'Directive', 'Pipe', 'signal', 'computed', 'effect', 'input', 'output', 'model', 'inject', 'viewChild', 'linkedSignal', 'toSignal', 'HttpClient', 'Router', 'Routes', 'ActivatedRoute', 'FormGroup', 'FormControl', 'Validators', 'FormsModule', 'ReactiveFormsModule', 'RouterOutlet', 'RouterLink', 'TestBed', 'httpResource', 'provideRouter', 'provideHttpClient', 'map', 'switchMap', 'catchError', 'forkJoin', 'of']),
+  keywords: new Set([...LANGS.ts.keywords, '@if', '@else', '@for', '@switch', '@case', '@default', '@empty', '@defer', '@placeholder', 'track', 'selector', 'template', 'imports', 'providers']),
+  comment: LANGS.js.comment,
+}
 LANGS.react = {
   types: new Set([...LANGS.ts.types, 'React', 'useState', 'useEffect', 'useRef', 'useContext', 'useReducer', 'useMemo', 'useCallback', 'useId', 'useLayoutEffect', 'createContext', 'createRoot', 'StrictMode', 'memo', 'lazy', 'Suspense', 'Link', 'NavLink', 'Route', 'Routes', 'Outlet', 'Navigate', 'BrowserRouter', 'useParams', 'useNavigate', 'useSearchParams', 'useQuery', 'ErrorBoundary']),
   keywords: LANGS.ts.keywords,
