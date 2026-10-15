@@ -15,6 +15,7 @@ import { react, reactGiris } from './react'
 import { vue, vueGiris } from './vue'
 import { angular, angularGiris } from './angular'
 import { node, nodeGiris } from './node'
+import { nextjs, nextjsGiris } from './nextjs'
 
 const SQL_GROUP = { id: 'sql', title: 'SQL' }
 const WEB_GROUP = { id: 'web', title: 'Web' }
@@ -47,4 +48,5 @@ export const languages: Language[] = [
   { id: 'vue', title: 'Vue', comment: '//', group: WEB_GROUP, giris: vueGiris, topics: vue },
   { id: 'angular', title: 'Angular', comment: '//', group: WEB_GROUP, giris: angularGiris, topics: angular },
   { id: 'node', title: 'Node.js + Express', comment: '//', group: WEB_GROUP, giris: nodeGiris, topics: node },
+  { id: 'nextjs', title: 'Next.js', comment: '//', hl: 'react', group: WEB_GROUP, giris: nextjsGiris, topics: nextjs },
 ]
