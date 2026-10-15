@@ -25,11 +25,15 @@ import { laravel, laravelGiris } from './laravel'
 import { git, gitGiris } from './git'
 import { bash, bashGiris } from './bash'
 import { docker, dockerGiris } from './docker'
+import { mongodb, mongodbGiris } from './mongodb'
+import { redis, redisGiris } from './redis'
+import { pandas, pandasGiris } from './pandas'
 
 const SQL_GROUP = { id: 'sql', title: 'SQL' }
 const WEB_GROUP = { id: 'web', title: 'Web' }
 const BACKEND_GROUP = { id: 'backend', title: 'Backend' }
 const TOOLS_GROUP = { id: 'araclar', title: 'Araçlar' }
+const DATA_GROUP = { id: 'veri', title: 'Veri' }
 const sqlDialect = (id: Dialect): Language => ({
   id,
   title: dialectTitles[id],
@@ -69,4 +73,7 @@ export const languages: Language[] = [
   { id: 'git', title: 'Git', comment: '#', hl: 'bash', group: TOOLS_GROUP, giris: gitGiris, topics: git },
   { id: 'bash', title: 'Bash / Linux', comment: '#', group: TOOLS_GROUP, giris: bashGiris, topics: bash },
   { id: 'docker', title: 'Docker', comment: '#', hl: 'bash', group: TOOLS_GROUP, giris: dockerGiris, topics: docker },
+  { id: 'mongodb', title: 'MongoDB', comment: '//', hl: 'js', group: DATA_GROUP, giris: mongodbGiris, topics: mongodb },
+  { id: 'redis', title: 'Redis', comment: '#', hl: 'bash', group: DATA_GROUP, giris: redisGiris, topics: redis },
+  { id: 'pandas', title: 'Pandas', comment: '#', hl: 'python', group: DATA_GROUP, giris: pandasGiris, topics: pandas },
 ]
