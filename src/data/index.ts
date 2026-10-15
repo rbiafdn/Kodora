@@ -22,10 +22,14 @@ import { aspnet, aspnetGiris } from './aspnet'
 import { django, djangoGiris } from './django'
 import { spring, springGiris } from './spring'
 import { laravel, laravelGiris } from './laravel'
+import { git, gitGiris } from './git'
+import { bash, bashGiris } from './bash'
+import { docker, dockerGiris } from './docker'
 
 const SQL_GROUP = { id: 'sql', title: 'SQL' }
 const WEB_GROUP = { id: 'web', title: 'Web' }
 const BACKEND_GROUP = { id: 'backend', title: 'Backend' }
+const TOOLS_GROUP = { id: 'araclar', title: 'Araçlar' }
 const sqlDialect = (id: Dialect): Language => ({
   id,
   title: dialectTitles[id],
@@ -62,4 +66,7 @@ export const languages: Language[] = [
   { id: 'django', title: 'Django', comment: '#', hl: 'python', group: BACKEND_GROUP, giris: djangoGiris, topics: django },
   { id: 'spring', title: 'Spring Boot', comment: '//', hl: 'java', group: BACKEND_GROUP, giris: springGiris, topics: spring },
   { id: 'laravel', title: 'Laravel', comment: '//', hl: 'php', group: BACKEND_GROUP, giris: laravelGiris, topics: laravel },
+  { id: 'git', title: 'Git', comment: '#', hl: 'bash', group: TOOLS_GROUP, giris: gitGiris, topics: git },
+  { id: 'bash', title: 'Bash / Linux', comment: '#', group: TOOLS_GROUP, giris: bashGiris, topics: bash },
+  { id: 'docker', title: 'Docker', comment: '#', hl: 'bash', group: TOOLS_GROUP, giris: dockerGiris, topics: docker },
 ]

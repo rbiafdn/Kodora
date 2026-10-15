@@ -136,6 +136,11 @@ LANGS.svelte = {
   keywords: new Set([...LANGS.ts.keywords, 'each', 'snippet', 'render', 'await', 'then', 'bind', 'transition', 'onclick', 'actions', 'load']),
   comment: LANGS.js.comment,
 }
+LANGS.bash = {
+  types: new Set(['git', 'docker', 'npm', 'npx', 'node', 'sudo', 'ls', 'cd', 'cp', 'mv', 'rm', 'cat', 'grep', 'find', 'sed', 'awk', 'tar', 'ssh', 'curl', 'chmod', 'chown', 'mkdir', 'touch', 'echo', 'tail', 'head', 'kill', 'ps', 'systemctl', 'apt', 'rsync', 'scp', 'gh', 'FROM', 'RUN', 'COPY', 'CMD', 'ENTRYPOINT', 'WORKDIR', 'ENV', 'EXPOSE', 'USER', 'ARG', 'services', 'image', 'build', 'ports', 'volumes', 'environment', 'depends_on']),
+  keywords: new Set(['if', 'then', 'else', 'elif', 'fi', 'for', 'in', 'do', 'done', 'while', 'case', 'esac', 'function', 'return', 'exit', 'export', 'local', 'set', 'true', 'false', 'AS']),
+  comment: '#.*',
+}
 LANGS.react = {
   types: new Set([...LANGS.ts.types, 'React', 'useState', 'useEffect', 'useRef', 'useContext', 'useReducer', 'useMemo', 'useCallback', 'useId', 'useLayoutEffect', 'createContext', 'createRoot', 'StrictMode', 'memo', 'lazy', 'Suspense', 'Link', 'NavLink', 'Route', 'Routes', 'Outlet', 'Navigate', 'BrowserRouter', 'useParams', 'useNavigate', 'useSearchParams', 'useQuery', 'ErrorBoundary']),
   keywords: LANGS.ts.keywords,
