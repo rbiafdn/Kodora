@@ -126,6 +126,11 @@ LANGS.angular = {
   keywords: new Set([...LANGS.ts.keywords, '@if', '@else', '@for', '@switch', '@case', '@default', '@empty', '@defer', '@placeholder', 'track', 'selector', 'template', 'imports', 'providers']),
   comment: LANGS.js.comment,
 }
+LANGS.node = {
+  types: new Set([...LANGS.ts.types, 'express', 'Router', 'Request', 'Response', 'NextFunction', 'process', 'req', 'res', 'next', 'app', 'jwt', 'bcrypt', 'z', 'prisma', 'pool', 'path', 'fs', 'cors', 'helmet', 'morgan', 'multer']),
+  keywords: LANGS.ts.keywords,
+  comment: LANGS.js.comment,
+}
 LANGS.react = {
   types: new Set([...LANGS.ts.types, 'React', 'useState', 'useEffect', 'useRef', 'useContext', 'useReducer', 'useMemo', 'useCallback', 'useId', 'useLayoutEffect', 'createContext', 'createRoot', 'StrictMode', 'memo', 'lazy', 'Suspense', 'Link', 'NavLink', 'Route', 'Routes', 'Outlet', 'Navigate', 'BrowserRouter', 'useParams', 'useNavigate', 'useSearchParams', 'useQuery', 'ErrorBoundary']),
   keywords: LANGS.ts.keywords,
