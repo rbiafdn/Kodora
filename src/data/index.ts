@@ -18,9 +18,14 @@ import { node, nodeGiris } from './node'
 import { nextjs, nextjsGiris } from './nextjs'
 import { svelte, svelteGiris } from './svelte'
 import { tailwind, tailwindGiris } from './tailwind'
+import { aspnet, aspnetGiris } from './aspnet'
+import { django, djangoGiris } from './django'
+import { spring, springGiris } from './spring'
+import { laravel, laravelGiris } from './laravel'
 
 const SQL_GROUP = { id: 'sql', title: 'SQL' }
 const WEB_GROUP = { id: 'web', title: 'Web' }
+const BACKEND_GROUP = { id: 'backend', title: 'Backend' }
 const sqlDialect = (id: Dialect): Language => ({
   id,
   title: dialectTitles[id],
@@ -53,4 +58,8 @@ export const languages: Language[] = [
   { id: 'nextjs', title: 'Next.js', comment: '//', hl: 'react', group: WEB_GROUP, giris: nextjsGiris, topics: nextjs },
   { id: 'svelte', title: 'Svelte', comment: '//', group: WEB_GROUP, giris: svelteGiris, topics: svelte },
   { id: 'tailwind', title: 'Tailwind', comment: '<!--', commentEnd: '-->', hl: 'html', group: WEB_GROUP, giris: tailwindGiris, topics: tailwind },
+  { id: 'aspnet', title: 'ASP.NET Core', comment: '//', hl: 'csharp', group: BACKEND_GROUP, giris: aspnetGiris, topics: aspnet },
+  { id: 'django', title: 'Django', comment: '#', hl: 'python', group: BACKEND_GROUP, giris: djangoGiris, topics: django },
+  { id: 'spring', title: 'Spring Boot', comment: '//', hl: 'java', group: BACKEND_GROUP, giris: springGiris, topics: spring },
+  { id: 'laravel', title: 'Laravel', comment: '//', hl: 'php', group: BACKEND_GROUP, giris: laravelGiris, topics: laravel },
 ]
