@@ -30,6 +30,7 @@ import { redis, redisGiris } from './redis'
 import { pandas, pandasGiris } from './pandas'
 import { aiTemel, aiTemelGiris } from './ai-temel'
 import { prompt, promptGiris } from './prompt'
+import { llmApi, llmApiGiris } from './llm-api'
 
 const SQL_GROUP = { id: 'sql', title: 'SQL' }
 const WEB_GROUP = { id: 'web', title: 'Web' }
@@ -81,4 +82,5 @@ export const languages: Language[] = [
   { id: 'pandas', title: 'Pandas', comment: '#', hl: 'python', group: DATA_GROUP, giris: pandasGiris, topics: pandas },
   { id: 'ai-temel', title: 'Yapay Zeka Temelleri', comment: '#', hl: 'python', group: AI_GROUP, giris: aiTemelGiris, topics: aiTemel },
   { id: 'prompt', title: 'Prompt Mühendisliği', comment: '#', hl: 'prompt', group: AI_GROUP, giris: promptGiris, topics: prompt },
+  { id: 'llm-api', title: 'LLM API Kullanımı', comment: '#', hl: 'python', group: AI_GROUP, giris: llmApiGiris, topics: llmApi },
 ]
