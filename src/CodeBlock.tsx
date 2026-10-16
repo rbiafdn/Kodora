@@ -141,6 +141,11 @@ LANGS.bash = {
   keywords: new Set(['if', 'then', 'else', 'elif', 'fi', 'for', 'in', 'do', 'done', 'while', 'case', 'esac', 'function', 'return', 'exit', 'export', 'local', 'set', 'true', 'false', 'AS']),
   comment: '#.*',
 }
+LANGS.prompt = {
+  types: new Set(['system', 'user', 'assistant', 'role', 'content', 'messages', 'Rol', 'Görev', 'Bağlam', 'Girdi', 'Biçim', 'Kısıtlar', 'Örnek', 'Soru', 'Cevap', 'Çıktı', 'Hatırlatma', 'Kategoriler', 'Hedef', 'Kurallar', 'Kimlik', 'Yapma', 'Kötü', 'İyi', 'negative', 'seed', 'prompt']),
+  keywords: new Set(['Sadece', 'sadece', 'Asla', 'asla', 'JSON', 'null', 'string', 'true', 'false', 'kötü', 'iyi', 'zayıf', 'güçlü']),
+  comment: '#.*',
+}
 LANGS.react = {
   types: new Set([...LANGS.ts.types, 'React', 'useState', 'useEffect', 'useRef', 'useContext', 'useReducer', 'useMemo', 'useCallback', 'useId', 'useLayoutEffect', 'createContext', 'createRoot', 'StrictMode', 'memo', 'lazy', 'Suspense', 'Link', 'NavLink', 'Route', 'Routes', 'Outlet', 'Navigate', 'BrowserRouter', 'useParams', 'useNavigate', 'useSearchParams', 'useQuery', 'ErrorBoundary']),
   keywords: LANGS.ts.keywords,
