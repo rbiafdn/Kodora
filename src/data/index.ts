@@ -28,12 +28,14 @@ import { docker, dockerGiris } from './docker'
 import { mongodb, mongodbGiris } from './mongodb'
 import { redis, redisGiris } from './redis'
 import { pandas, pandasGiris } from './pandas'
+import { aiTemel, aiTemelGiris } from './ai-temel'
 
 const SQL_GROUP = { id: 'sql', title: 'SQL' }
 const WEB_GROUP = { id: 'web', title: 'Web' }
 const BACKEND_GROUP = { id: 'backend', title: 'Backend' }
 const TOOLS_GROUP = { id: 'araclar', title: 'Araçlar' }
 const DATA_GROUP = { id: 'veri', title: 'Veri' }
+const AI_GROUP = { id: 'ai', title: 'Yapay Zeka' }
 const sqlDialect = (id: Dialect): Language => ({
   id,
   title: dialectTitles[id],
@@ -76,4 +78,5 @@ export const languages: Language[] = [
   { id: 'mongodb', title: 'MongoDB', comment: '//', hl: 'js', group: DATA_GROUP, giris: mongodbGiris, topics: mongodb },
   { id: 'redis', title: 'Redis', comment: '#', hl: 'bash', group: DATA_GROUP, giris: redisGiris, topics: redis },
   { id: 'pandas', title: 'Pandas', comment: '#', hl: 'python', group: DATA_GROUP, giris: pandasGiris, topics: pandas },
+  { id: 'ai-temel', title: 'Yapay Zeka Temelleri', comment: '#', hl: 'python', group: AI_GROUP, giris: aiTemelGiris, topics: aiTemel },
 ]
