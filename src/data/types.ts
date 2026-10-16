@@ -5,6 +5,7 @@ export type Item = {
   syntax: string // Ana listede gösterilen yapı (örnek değer yok)
   note: string // Kısa açıklama, tek cümle
   desc: string // Ne olduğu
+  basit?: string // Hiç bilmeyen için benzetmeli, jargonsuz anlatım (sağ panelde "Basitçe" kutusu)
   when?: string // Ne zaman kullanılır
   examples: string[][] // Gerçek örnekler, her biri satır listesi
   parts?: Line[] // Kod parçalarının anlamı

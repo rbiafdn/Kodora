@@ -340,6 +340,12 @@ export function App() {
           <h2 className="detail-name">{s.name}</h2>
           <div className="detail-syntax">{highlight(s.syntax, hl)}</div>
           <p className="detail-desc">{s.desc}</p>
+          {s.basit && (
+            <p className="basit">
+              <span className="basit-etiket">Basitçe</span>
+              {s.basit}
+            </p>
+          )}
 
           {s.when && (
             <>
