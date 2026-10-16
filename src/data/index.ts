@@ -86,5 +86,5 @@ export const languages: Language[] = [
   { id: 'prompt', title: 'Prompt Mühendisliği', comment: '#', hl: 'prompt', group: AI_GROUP, giris: promptGiris, topics: prompt },
   { id: 'llm-api', title: 'LLM API Kullanımı', comment: '#', hl: 'python', group: AI_GROUP, giris: llmApiGiris, topics: llmApi },
   { id: 'rag', title: 'RAG ve Vektör Veritabanı', comment: '#', hl: 'python', group: AI_GROUP, giris: ragGiris, topics: rag },
-  { id: 'agents', title: 'AI Agent\x27lar', comment: '#', hl: 'python', group: AI_GROUP, giris: agentsGiris, topics: agents },
+  { id: 'agents', title: "AI Agent'lar", comment: '#', hl: 'python', group: AI_GROUP, giris: agentsGiris, topics: agents },
 ]
