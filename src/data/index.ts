@@ -32,6 +32,7 @@ import { aiTemel, aiTemelGiris } from './ai-temel'
 import { prompt, promptGiris } from './prompt'
 import { llmApi, llmApiGiris } from './llm-api'
 import { rag, ragGiris } from './rag'
+import { agents, agentsGiris } from './agents'
 
 const SQL_GROUP = { id: 'sql', title: 'SQL' }
 const WEB_GROUP = { id: 'web', title: 'Web' }
@@ -85,4 +86,5 @@ export const languages: Language[] = [
   { id: 'prompt', title: 'Prompt Mühendisliği', comment: '#', hl: 'prompt', group: AI_GROUP, giris: promptGiris, topics: prompt },
   { id: 'llm-api', title: 'LLM API Kullanımı', comment: '#', hl: 'python', group: AI_GROUP, giris: llmApiGiris, topics: llmApi },
   { id: 'rag', title: 'RAG ve Vektör Veritabanı', comment: '#', hl: 'python', group: AI_GROUP, giris: ragGiris, topics: rag },
+  { id: 'agents', title: 'AI Agent\x27lar', comment: '#', hl: 'python', group: AI_GROUP, giris: agentsGiris, topics: agents },
 ]
