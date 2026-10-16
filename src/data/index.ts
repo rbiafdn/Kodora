@@ -39,6 +39,18 @@ import { finetune, finetuneGiris } from './finetune'
 import { medya, medyaGiris } from './medya'
 import { aiUygulama, aiUygulamaGiris } from './ai-uygulama'
 import { aiAraclar, aiAraclarGiris } from './ai-araclar'
+// Egzersizler: konu başına bir uygulamalı proje
+import { aiTemelEgz } from './egz-ai-temel'
+import { promptEgz } from './egz-prompt'
+import { llmApiEgz } from './egz-llm-api'
+import { ragEgz } from './egz-rag'
+import { agentsEgz } from './egz-agents'
+import { mlEgz } from './egz-ml'
+import { dlEgz } from './egz-dl'
+import { finetuneEgz } from './egz-finetune'
+import { medyaEgz } from './egz-medya'
+import { aiUygulamaEgz } from './egz-ai-uygulama'
+import { aiAraclarEgz } from './egz-ai-araclar'
 
 const SQL_GROUP = { id: 'sql', title: 'SQL' }
 const WEB_GROUP = { id: 'web', title: 'Web' }
@@ -88,15 +100,15 @@ export const languages: Language[] = [
   { id: 'mongodb', title: 'MongoDB', comment: '//', hl: 'js', group: DATA_GROUP, giris: mongodbGiris, topics: mongodb },
   { id: 'redis', title: 'Redis', comment: '#', hl: 'bash', group: DATA_GROUP, giris: redisGiris, topics: redis },
   { id: 'pandas', title: 'Pandas', comment: '#', hl: 'python', group: DATA_GROUP, giris: pandasGiris, topics: pandas },
-  { id: 'ai-temel', title: 'Yapay Zeka Temelleri', comment: '#', hl: 'python', group: AI_GROUP, giris: aiTemelGiris, topics: aiTemel },
-  { id: 'prompt', title: 'Prompt Mühendisliği', comment: '#', hl: 'prompt', group: AI_GROUP, giris: promptGiris, topics: prompt },
-  { id: 'llm-api', title: 'LLM API Kullanımı', comment: '#', hl: 'python', group: AI_GROUP, giris: llmApiGiris, topics: llmApi },
-  { id: 'rag', title: 'RAG ve Vektör Veritabanı', comment: '#', hl: 'python', group: AI_GROUP, giris: ragGiris, topics: rag },
-  { id: 'agents', title: "AI Agent'lar", comment: '#', hl: 'python', group: AI_GROUP, giris: agentsGiris, topics: agents },
-  { id: 'ml', title: 'Makine Öğrenmesi', comment: '#', hl: 'python', group: AI_GROUP, giris: mlGiris, topics: ml },
-  { id: 'dl', title: 'Derin Öğrenme', comment: '#', hl: 'python', group: AI_GROUP, giris: dlGiris, topics: dl },
-  { id: 'finetune', title: 'Fine-tuning', comment: '#', hl: 'python', group: AI_GROUP, giris: finetuneGiris, topics: finetune },
-  { id: 'medya', title: 'Medya Üretimi', comment: '#', hl: 'python', group: AI_GROUP, giris: medyaGiris, topics: medya },
-  { id: 'ai-uygulama', title: 'AI Uygulama Geliştirme', comment: '//', hl: 'react', group: AI_GROUP, giris: aiUygulamaGiris, topics: aiUygulama },
-  { id: 'ai-araclar', title: 'Günlük AI Araçları', comment: '#', hl: 'prompt', group: AI_GROUP, giris: aiAraclarGiris, topics: aiAraclar },
+  { id: 'ai-temel', title: 'Yapay Zeka Temelleri', comment: '#', hl: 'python', group: AI_GROUP, giris: aiTemelGiris, topics: aiTemel, egzersizler: aiTemelEgz },
+  { id: 'prompt', title: 'Prompt Mühendisliği', comment: '#', hl: 'prompt', group: AI_GROUP, giris: promptGiris, topics: prompt, egzersizler: promptEgz },
+  { id: 'llm-api', title: 'LLM API Kullanımı', comment: '#', hl: 'python', group: AI_GROUP, giris: llmApiGiris, topics: llmApi, egzersizler: llmApiEgz },
+  { id: 'rag', title: 'RAG ve Vektör Veritabanı', comment: '#', hl: 'python', group: AI_GROUP, giris: ragGiris, topics: rag, egzersizler: ragEgz },
+  { id: 'agents', title: "AI Agent'lar", comment: '#', hl: 'python', group: AI_GROUP, giris: agentsGiris, topics: agents, egzersizler: agentsEgz },
+  { id: 'ml', title: 'Makine Öğrenmesi', comment: '#', hl: 'python', group: AI_GROUP, giris: mlGiris, topics: ml, egzersizler: mlEgz },
+  { id: 'dl', title: 'Derin Öğrenme', comment: '#', hl: 'python', group: AI_GROUP, giris: dlGiris, topics: dl, egzersizler: dlEgz },
+  { id: 'finetune', title: 'Fine-tuning', comment: '#', hl: 'python', group: AI_GROUP, giris: finetuneGiris, topics: finetune, egzersizler: finetuneEgz },
+  { id: 'medya', title: 'Medya Üretimi', comment: '#', hl: 'python', group: AI_GROUP, giris: medyaGiris, topics: medya, egzersizler: medyaEgz },
+  { id: 'ai-uygulama', title: 'AI Uygulama Geliştirme', comment: '//', hl: 'react', group: AI_GROUP, giris: aiUygulamaGiris, topics: aiUygulama, egzersizler: aiUygulamaEgz },
+  { id: 'ai-araclar', title: 'Günlük AI Araçları', comment: '#', hl: 'prompt', group: AI_GROUP, giris: aiAraclarGiris, topics: aiAraclar, egzersizler: aiAraclarEgz },
 ]

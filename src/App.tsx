@@ -2,18 +2,22 @@ import { useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react'
 import { languages } from './data'
 import type { Item, Language, Topic } from './data/types'
 import { Code, highlight } from './CodeBlock'
+import { EGZ, ExerciseList, ExerciseView, completedExercises } from './Exercises'
 
 type Theme = 'light' | 'dark'
 type Row = { key: string; topic: string; item: Item }
 const GIRIS = 'giris'
 
-// Adres: #/<dil>/<konu>  (konu yoksa giriş sayfası)
-function readHash(): { lang: string; topic: string } {
-  const m = location.hash.match(/^#\/([\w-]+)(?:\/([\w-]+))?/)
+// Adres: #/<dil>/<konu>  (konu yoksa giriş sayfası); #/<dil>/egzersizler/<konu> tek egzersiz
+function readHash(): { lang: string; topic: string; egz: string | null } {
+  const m = location.hash.match(/^#\/([\w-]+)(?:\/([\w-]+))?(?:\/([\w-]+))?/)
   const lang = languages.find((l) => l.id === m?.[1]) ?? languages[0]
   const t = m?.[2]
-  const topic = t && (t === GIRIS || lang.topics.some((x) => x.id === t)) ? t : GIRIS
-  return { lang: lang.id, topic }
+  const hasEgz = (lang.egzersizler?.length ?? 0) > 0
+  const topic = t && (t === GIRIS || (t === EGZ && hasEgz) || lang.topics.some((x) => x.id === t)) ? t : GIRIS
+  const e = m?.[3]
+  const egz = topic === EGZ && e && lang.egzersizler?.some((x) => x.topic === e) ? e : null
+  return { lang: lang.id, topic, egz }
 }
 
 function readTheme(): Theme {
@@ -117,6 +121,12 @@ export function App() {
   const topic = lang.topics.find((t) => t.id === route.topic) ?? null
   const hl = lang.hl ?? lang.id
   const q = query.trim().toLocaleLowerCase('tr')
+  // Egzersizler: liste sayfası veya tek egzersiz; ilerleme değişince menüdeki sayaç tazelenir
+  const egzList = lang.egzersizler ?? []
+  const onEgz = route.topic === EGZ
+  const exercise = onEgz && route.egz ? egzList.find((e) => e.topic === route.egz) ?? null : null
+  const [egzTick, setEgzTick] = useState(0)
+  const egzDone = egzList.length ? completedExercises(lang) : 0
 
   // Üst sekmeler: gruplu diller (SQL lehçeleri) tek sekmede açılır menü olur.
   const [openMenu, setOpenMenu] = useState<string | null>(null)
@@ -231,12 +241,23 @@ export function App() {
         <div className="nav-title">{lang.title}</div>
         <a
           href={`#/${lang.id}/${GIRIS}`}
-          className={!q && !topic ? 'topic active' : 'topic'}
+          className={!q && !topic && !onEgz ? 'topic active' : 'topic'}
           onClick={(e) => { e.preventDefault(); go(lang.id, GIRIS) }}
         >
           <span className="num">·</span>
           Giriş
         </a>
+        {egzList.length > 0 && (
+          <a
+            href={`#/${lang.id}/${EGZ}`}
+            className={!q && onEgz ? 'topic egz-link active' : 'topic egz-link'}
+            onClick={(e) => { e.preventDefault(); go(lang.id, EGZ) }}
+          >
+            <span className="num">★</span>
+            Egzersizler
+            <span className="egz-badge" key={egzTick}>{egzDone}/{egzList.length}</span>
+          </a>
+        )}
         {lang.topics.map((t, i) => (
           <a
             key={t.id}
@@ -250,12 +271,30 @@ export function App() {
         ))}
       </nav>
 
+      {!q && exercise && (
+        <ExerciseView
+          key={lang.id + exercise.topic}
+          lang={lang}
+          exercise={exercise}
+          hl={hl}
+          onChange={() => setEgzTick((v) => v + 1)}
+          back={() => go(lang.id, EGZ)}
+          next={(() => {
+            const i = egzList.indexOf(exercise)
+            return i >= 0 && i + 1 < egzList.length ? () => go(lang.id, `${EGZ}/${egzList[i + 1].topic}`) : null
+          })()}
+        />
+      )}
+
+      {!(!q && exercise) && (
       <main className="content">
         {q ? (
           <>
             <h1>Arama: {query.trim()}</h1>
             {rows.length === 0 && <p className="empty">Sonuç yok</p>}
           </>
+        ) : onEgz ? (
+          <ExerciseList lang={lang} tick={egzTick} open={(t) => go(lang.id, `${EGZ}/${t}`)} />
         ) : topic ? (
           <>
             <h1>{topic.title}</h1>
@@ -300,14 +339,22 @@ export function App() {
           </div>
         )}
       </main>
+      )}
 
       {/* Sağ panel hep açık: satır seçiliyse detay, değilse konunun kısa tanıtımı */}
-      {!(selected && s) && (
+      {!(selected && s) && !(!q && exercise) && (
         <aside className="detail">
           {q ? (
             <>
               <div className="detail-head"><span className="crumb">Arama</span></div>
               <p className="detail-text">{rows.length} sonuç. Bir satıra tıklayınca detayı burada açılır.</p>
+            </>
+          ) : onEgz ? (
+            <>
+              <div className="detail-head"><span className="crumb">Egzersizler</span></div>
+              <p className="detail-text">Her konu için bir küçük proje: {egzList.length} egzersiz, {egzDone} tamamlandı.</p>
+              <p className="detail-text">Bir karta tıkla; adımları işaretledikçe ilerleme bu tarayıcıda saklanır, sonra kaldığın yerden devam edersin.</p>
+              <p className="detail-hint">İpucu ve örnek çözüm, egzersiz açıkken burada görünür.</p>
             </>
           ) : topic ? (
             <>

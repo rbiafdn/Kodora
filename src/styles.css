@@ -883,3 +883,290 @@ h1 {
     gap: 2px;
   }
 }
+
+/* Egzersizler: menü rozeti, liste kartları, adımlar */
+.egz-badge {
+  margin-left: auto;
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--text-3);
+  background: var(--surface-2);
+  border-radius: 10px;
+  padding: 0 7px;
+}
+
+.topic.active .egz-badge {
+  color: var(--accent);
+  background: var(--accent-soft);
+}
+
+.egz-total {
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.egz-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.egz-card {
+  display: grid;
+  grid-template-columns: 28px 1fr auto;
+  gap: 12px;
+  align-items: center;
+  text-align: left;
+  padding: 10px 14px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--surface);
+  color: var(--text);
+  cursor: pointer;
+  font: inherit;
+}
+
+.egz-card:hover {
+  border-color: var(--accent);
+}
+
+.egz-card.finished {
+  border-color: var(--known);
+}
+
+.egz-num {
+  font-size: 0.8rem;
+  color: var(--text-3);
+  font-variant-numeric: tabular-nums;
+}
+
+.egz-card.finished .egz-num {
+  color: var(--known);
+}
+
+.egz-body {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.egz-topic {
+  font-size: 0.74rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--text-3);
+}
+
+.egz-title {
+  font-weight: 600;
+}
+
+.egz-amac {
+  font-size: 0.86rem;
+  color: var(--text-2);
+}
+
+.egz-bar {
+  display: block;
+  height: 4px;
+  margin-top: 6px;
+  border-radius: 2px;
+  background: var(--surface-2);
+  overflow: hidden;
+}
+
+.egz-bar > span {
+  display: block;
+  height: 100%;
+  background: var(--accent);
+  transition: width 0.2s;
+}
+
+.egz-card.finished .egz-bar > span {
+  background: var(--known);
+}
+
+.egz-state {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 4px;
+}
+
+.egz-count {
+  font-size: 0.78rem;
+  color: var(--text-3);
+  white-space: nowrap;
+}
+
+.egz-btn {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--accent);
+  border: 1px solid var(--accent);
+  border-radius: 6px;
+  padding: 2px 10px;
+  white-space: nowrap;
+}
+
+.egz-head {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 4px;
+}
+
+.egz-back {
+  background: none;
+  border: 0;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+}
+
+.egz-progress {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 4px 0 14px;
+}
+
+.egz-progress .egz-bar {
+  flex: 1;
+  margin: 0;
+  height: 6px;
+}
+
+.egz-progress .copy {
+  position: static;
+  opacity: 1;
+}
+
+.egz-next {
+  color: var(--accent);
+  border-color: var(--accent);
+}
+
+.steps {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.step {
+  padding: 8px 12px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--surface);
+  cursor: pointer;
+}
+
+.step.active {
+  border-color: var(--accent);
+}
+
+.step.done {
+  opacity: 0.75;
+}
+
+.step.done .step-text {
+  text-decoration: line-through;
+  color: var(--text-2);
+}
+
+.step-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  cursor: pointer;
+}
+
+.step-row input {
+  margin-top: 4px;
+  accent-color: var(--accent);
+  flex-shrink: 0;
+}
+
+.step-num {
+  font-size: 0.8rem;
+  color: var(--text-3);
+  margin-top: 2px;
+  font-variant-numeric: tabular-nums;
+}
+
+.step-text {
+  font-size: 0.92rem;
+  line-height: 1.45;
+}
+
+.step-note {
+  display: block;
+  width: 100%;
+  margin-top: 6px;
+  padding: 5px 8px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--mono);
+  font-variant-ligatures: none;
+  font-size: 0.8rem;
+  line-height: 1.4;
+  resize: vertical;
+  outline: none;
+}
+
+.step-note:focus {
+  border-color: var(--accent);
+}
+
+.egz-aid .copy {
+  position: static;
+  opacity: 1;
+}
+
+.egz-aid .code-wrap {
+  margin-top: 4px;
+}
+
+.egz-sonuc {
+  color: var(--known);
+}
+
+.egz-side-count {
+  color: var(--text-3);
+  font-size: 0.82rem;
+}
+
+/* İpucu ve çözüm masaüstünde sağ panelde, mobilde adımın altında */
+.egz-inline {
+  display: none;
+  margin-top: 8px;
+  padding-top: 8px;
+  border-top: 1px dashed var(--border);
+}
+
+@media (max-width: 800px) {
+  .egz-inline {
+    display: block;
+  }
+
+  .egz-side {
+    display: none;
+  }
+
+  .egz-card {
+    grid-template-columns: 24px 1fr;
+  }
+
+  .egz-state {
+    grid-column: 2;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+}

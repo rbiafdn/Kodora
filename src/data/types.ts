@@ -16,6 +16,19 @@ export type Item = {
 }
 export type Intro = { what: string; why: string; where: string }
 export type Topic = { id: string; title: string; intro: Intro; items: Item[] }
+// Egzersiz: konu başına küçük bir uygulamalı proje; adımlar işaretlenir, notlar tarayıcıda saklanır.
+export type Step = {
+  gorev: string // Bu adımda yapılacak iş
+  ipucu?: string // Takılınca gösterilecek yönlendirme
+  cozum?: string[] // Örnek çözüm, satır listesi (kod veya metin)
+}
+export type Exercise = {
+  topic: string // Hangi konuya ait (Topic.id)
+  title: string // Projenin adı
+  amac: string // Sonunda ne ortaya çıkacak, ne öğrenilecek
+  adimlar: Step[]
+  sonuc?: string // Bitince gösterilen kısa not
+}
 export type Language = {
   id: string // Adres ve renklendirme anahtarı: csharp, python
   title: string // Üst sekmede görünen ad
@@ -25,4 +38,5 @@ export type Language = {
   group?: { id: string; title: string } // Üst sekmede açılır menü altında toplanan diller (SQL lehçeleri)
   giris: { q: string; a: string }[] // Dil giriş sayfası soru-cevapları
   topics: Topic[]
+  egzersizler?: Exercise[] // Konu başına bir uygulamalı proje (menüde "Egzersizler")
 }
