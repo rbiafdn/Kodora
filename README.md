@@ -14,5 +14,6 @@ Canlı: https://rbiafdn.github.io/Kodora/ — Depo: https://github.com/rbiafdn/K
 Yayınlama: `npm run deploy` (derler, gh-pages dalına gönderir; birkaç dakika sonra canlıya düşer).
 
 - İçerik: `src/data/` (types.ts ortak tipler; csharp.ts, python.ts, java.ts, cpp.ts, c.ts, php.ts dil verileri; sql.ts ortak SQL + lehçe farkları; html.ts, css.ts, js.ts, ts.ts, react.ts, vue.ts, angular.ts, node.ts, nextjs.ts, svelte.ts, tailwind.ts web; aspnet.ts, django.ts, spring.ts, laravel.ts backend; git.ts, bash.ts, docker.ts araçlar; mongodb.ts, redis.ts, pandas.ts veri; ai-temel.ts, prompt.ts, llm-api.ts, rag.ts, agents.ts, ml.ts, dl.ts, finetune.ts, medya.ts, ai-uygulama.ts, ai-araclar.ts yapay zeka; index.ts dil listesi). Her dil: giriş soru-cevapları + 15 konu; konu → satır: yapı, açıklama, detay, pratik sorusu
+- Yapay Zeka başlıkları hiç bilmeyen biri için yazıldı: 11-14 soruluk jargonsuz girişler, her maddede 2-4 cümlelik açıklama ve günlük hayattan benzetmeli "Basitçe" kutusu (`Item.basit`, sağ panelde açıklamanın altında).
 - Arayüz: `src/App.tsx` (sol konu listesi, kompakt satır listesi, sağ detay paneli), `src/CodeBlock.tsx` (renklendirme, kod bloğu, kopyalama)
 - Stil: `src/styles.css`
