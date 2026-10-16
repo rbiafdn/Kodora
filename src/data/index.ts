@@ -36,6 +36,7 @@ import { agents, agentsGiris } from './agents'
 import { ml, mlGiris } from './ml'
 import { dl, dlGiris } from './dl'
 import { finetune, finetuneGiris } from './finetune'
+import { medya, medyaGiris } from './medya'
 
 const SQL_GROUP = { id: 'sql', title: 'SQL' }
 const WEB_GROUP = { id: 'web', title: 'Web' }
@@ -93,4 +94,5 @@ export const languages: Language[] = [
   { id: 'ml', title: 'Makine Öğrenmesi', comment: '#', hl: 'python', group: AI_GROUP, giris: mlGiris, topics: ml },
   { id: 'dl', title: 'Derin Öğrenme', comment: '#', hl: 'python', group: AI_GROUP, giris: dlGiris, topics: dl },
   { id: 'finetune', title: 'Fine-tuning', comment: '#', hl: 'python', group: AI_GROUP, giris: finetuneGiris, topics: finetune },
+  { id: 'medya', title: 'Medya Üretimi', comment: '#', hl: 'python', group: AI_GROUP, giris: medyaGiris, topics: medya },
 ]
